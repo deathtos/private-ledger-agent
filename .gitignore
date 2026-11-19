@@ -1,0 +1,10 @@
+bin/
+obj/
+*.user
+.vs/
+.vscode/
+.idea/
+# Keep real bank exports out of git — only the synthetic samples are tracked
+data/*.csv
+!data/checking-export.csv
+!data/credit-card-export.csv

@@ -1,0 +1,25 @@
+{
+  // Categories are assigned here, deterministically — never by the model.
+  // If a file has its own Category column, it's used (after Aliases) unless OverrideFileCategories is true.
+  "OverrideFileCategories": false,
+
+  // Rename bank-specific categories to your own vocabulary.
+  "Aliases": {
+    "Food & Drink": "Dining",
+    "Restaurants": "Dining",
+    "Payment": "Credit Card Payment",
+    "Payments and Credits": "Credit Card Payment"
+  },
+
+  // First match wins. Matching is a case-insensitive "description contains".
+  "Rules": [
+    { "Category": "Income",              "Contains": [ "PAYROLL", "DIRECT DEP" ] },
+    { "Category": "Credit Card Payment", "Contains": [ "PAYMENT TO CHASE CARD", "AUTOPAY", "PAYMENT THANK YOU" ] },
+    { "Category": "Housing",             "Contains": [ "RENT", "MORTGAGE" ] },
+    { "Category": "Utilities",           "Contains": [ "DUKE ENERGY", "SPECTRUM", "WATER", "AT&T" ] },
+    { "Category": "Groceries",           "Contains": [ "HARRIS TEETER", "ALDI", "KROGER", "PUBLIX", "FOOD LION", "WHOLE FOODS", "TRADER JOE" ] },
+    { "Category": "Dining",              "Contains": [ "CHICK-FIL-A", "CHIPOTLE", "STARBUCKS", "DOORDASH", "UBER EATS" ] },
+    { "Category": "Cash",                "Contains": [ "ATM WITHDRAWAL" ] },
+    { "Category": "Transfer",            "Contains": [ "ZELLE TO", "TRANSFER TO", "TRANSFER FROM" ] }
+  ]
+}
